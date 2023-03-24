@@ -1,0 +1,11 @@
+CREATE TABLE Category (
+    CategoryId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    CategoryName NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Product (
+    ProductId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    ProductName NVARCHAR(50) NOT NULL,
+    CategoryId INT NOT NULL,
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
+);
